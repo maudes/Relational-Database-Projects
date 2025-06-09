@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 12.22 (Ubuntu 12.22-0ubuntu0.20.04.4)
--- Dumped by pg_dump version 12.22 (Ubuntu 12.22-0ubuntu0.20.04.4)
+-- Dumped from database version 12.17 (Ubuntu 12.17-1.pgdg22.04+1)
+-- Dumped by pg_dump version 12.17 (Ubuntu 12.17-1.pgdg22.04+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -133,6 +133,14 @@ ALTER TABLE ONLY public.elements
 
 
 --
+-- Name: elements elements_name_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.elements
+    ADD CONSTRAINT elements_name_key UNIQUE (name);
+
+
+--
 -- Name: elements elements_pkey; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
@@ -141,11 +149,11 @@ ALTER TABLE ONLY public.elements
 
 
 --
--- Name: elements name; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+-- Name: elements elements_symbol_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.elements
-    ADD CONSTRAINT name UNIQUE (name);
+    ADD CONSTRAINT elements_symbol_key UNIQUE (symbol);
 
 
 --
@@ -162,14 +170,6 @@ ALTER TABLE ONLY public.properties
 
 ALTER TABLE ONLY public.properties
     ADD CONSTRAINT properties_pkey PRIMARY KEY (atomic_number);
-
-
---
--- Name: elements symbol; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
---
-
-ALTER TABLE ONLY public.elements
-    ADD CONSTRAINT symbol UNIQUE (symbol);
 
 
 --
